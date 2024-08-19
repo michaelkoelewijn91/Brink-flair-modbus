@@ -1,6 +1,6 @@
 substitutions:
   name: brink
-  friendly_name: Brink
+  friendly_name: Brink Flair 400
   device_description: "Esphome component for Brink Flair with modbus"
   timezone: "Europe/Amsterdam"
 ###  Settings Brink Flair (no need to change normally)
