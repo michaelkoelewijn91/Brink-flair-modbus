@@ -4,7 +4,32 @@ web_server:
   local: true  
 
 wifi:
+  enable_on_boot: false
   ap:
-    ssid: "${friendly_name}"
-    password: "brink400"
-    ap_timeout: 10s
+    ap_timeout: 0s
+
+#G41=Button
+binary_sensor:
+  - platform: gpio
+    name: Buttonw
+    id: g41button
+    pin:
+      number: GPIO41
+      inverted: true
+      mode:
+        input: true
+        pullup: true
+    internal: true
+    # Toggle the switch when the pushbutton is pressed
+    on_press:
+      - if:
+          condition: wifi.enabled
+          then:
+            - wifi.disable:
+            - logger.log: WiFi is disabled!
+          else:
+            - wifi.enable:
+            - delay: 2s  # Wait for Wi-Fi to enable
+            - lambda: |-
+                WiFi.softAP("Brink flair 400", "brink400");
+                ESP_LOGI("wifi", "WiFi AP SSID set to 'Brink flair 400' with password 'brink400'");

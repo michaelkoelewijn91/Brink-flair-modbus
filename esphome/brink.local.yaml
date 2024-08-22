@@ -18,7 +18,7 @@ packages:
   device_base1: !include .brink.base.yaml
   device_base2: !include boards/board-m5stack-atoms3-lite-fz.yaml
   device_base3: !include type/brink-400.yaml
-  device_base4: !include config/wifi.yaml
+  device_base4: !include config/local.yaml
 
 logger:
   logs:
