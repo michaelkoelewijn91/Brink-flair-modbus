@@ -64,6 +64,7 @@ substitutions:
   days: dagen
   not_dirty: Niet vervuild
   dirty: Vervuild
+  internal_esp_temperature: Controller interne temperatuur
 
 text_sensor:
   - id: brink_filter_reset_on

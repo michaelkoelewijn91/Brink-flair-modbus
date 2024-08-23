@@ -351,6 +351,10 @@ sensor:
     register_type: read
     value_type: U_WORD
 
+  - platform: internal_temperature
+    name: ${internal_esp_temperature}
+    entity_category: diagnostic
+
 text_sensor:
   - id: brink_status
     name: ${brink_status}
